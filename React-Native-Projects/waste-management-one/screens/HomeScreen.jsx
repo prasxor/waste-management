@@ -40,10 +40,6 @@ import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'rea
 const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView style={styles.container}>
-      {/* Header */}
-      {/* <View style={styles.header}>
-        <Text style={styles.headerText}>JeevEco</Text>
-      </View> */}
 
       {/* Hero Section */}
       <View style={styles.heroSection}>
@@ -91,7 +87,8 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ECEDFF',
+    marginBottom: 60
   },
   header: {
     alignItems: 'center',
