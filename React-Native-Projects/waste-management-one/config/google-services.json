@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "355413303370",
+    "project_id": "wastemanagementapp-5c715",
+    "storage_bucket": "wastemanagementapp-5c715.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355413303370:android:643754eb9cf7e7567486b3",
+        "android_client_info": {
+          "package_name": "com.prasxor.JeevEco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEbTMkIOWxrerJXHVr1sNr8neWoZB6eIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
