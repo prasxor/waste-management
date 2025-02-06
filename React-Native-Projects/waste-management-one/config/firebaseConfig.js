@@ -59,38 +59,29 @@
 
 // export { auth, db, storage };
 
-// firebaseConfig.js
-import { initializeApp, getApp } from 'firebase/app';
-import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
-import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage'; // Correct import
+
+
+
+import firebase from '@react-native-firebase/app';
+import '@react-native-firebase/firestore';
+import '@react-native-firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEbTMkIOWxrerJXHVr1sNr8neWoZB6eIs",
-  authDomain: "wastemanagementapp-5c715.firebaseapp.com",
-  projectId: "wastemanagementapp-5c715",
-  storageBucket: "wastemanagementapp-5c715.appspot.com",
-  messagingSenderId: "355413303370",
-  appId: "1:355413303370:android:643754eb9cf7e7567486b3",
-  measurementId: "G-8BFNLGNS74",
-};
+    apiKey: "AIzaSyDEbTMkIOWxrerJXHVr1sNr8neWoZB6eIs",
+    authDomain: "wastemanagementapp-5c715.firebaseapp.com",
+    projectId: "wastemanagementapp-5c715",
+    storageBucket: "wastemanagementapp-5c715.appspot.com",
+    messagingSenderId: "355413303370",
+    appId: "1:355413303370:android:643754eb9cf7e7567486b3",
+    measurementId: "G-8BFNLGNS74",
+  };
 
-// Initialize Firebase only once
-let app;
-try {
-  app = getApp(); // Get existing app
-} catch (e) {
-  app = initializeApp(firebaseConfig); // Initialize if none exists
+// Initialize Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // Use the default app if it's already initialized
 }
 
-// Initialize Auth with persistence
-const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(ReactNativeAsyncStorage), // Add AsyncStorage persistence
-});
-
-// Initialize Firestore and Storage
-const db = getFirestore(app);
-const storage = getStorage(app);
-
-export { auth, db, storage };
+const db = firebase.firestore();
+const storage = firebase.storage();
