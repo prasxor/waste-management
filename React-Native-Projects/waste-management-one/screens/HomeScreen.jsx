@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.heroSection}>
         <Text style={styles.heroText1}>A Cleaner City Starts with You.</Text>
         <TouchableOpacity style={styles.mainBtn}>
-          <Text style={styles.mainBtnText}>JOIN NOW!</Text>
+          <Text  onPress={() => navigation.navigate("Join Us")} style={styles.mainBtnText}>JOIN NOW!</Text>
         </TouchableOpacity>
       </View>
 
@@ -68,48 +68,59 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <View style={[styles.featureCard, { backgroundColor: "#F1DC8A" }]} >
+        <View style={[styles.featureCard, { backgroundColor: "#F1DC8A" }]}>
           <Text style={styles.featureCardfirstText}>Snap a Photo</Text>
           <Text style={styles.featureCardsecondText}>
-          Capture an image of the waste.
+            Capture an image of the waste.
           </Text>
           <View style={styles.featureCardNumberMain}>
-            <View style={[styles.featureCardNumber, {backgroundColor: '#CDBB75'}]}>
+            <View
+              style={[styles.featureCardNumber, { backgroundColor: "#CDBB75" }]}
+            >
               <Text style={styles.featureCardNumbertext}>2</Text>
             </View>
           </View>
         </View>
-        <View style={[styles.featureCard, { backgroundColor: "#C9E0DD" }]} >
+        <View style={[styles.featureCard, { backgroundColor: "#C9E0DD" }]}>
           <Text style={styles.featureCardfirstText}>Provide Details</Text>
           <Text style={styles.featureCardsecondText}>
-          See garbage around you? Open JeevEco.
+            See garbage around you? Open JeevEco.
           </Text>
           <View style={styles.featureCardNumberMain}>
-            <View style={[styles.featureCardNumber, {backgroundColor: '#ABBEBC'}]}>
+            <View
+              style={[styles.featureCardNumber, { backgroundColor: "#ABBEBC" }]}
+            >
               <Text style={styles.featureCardNumbertext}>3</Text>
             </View>
           </View>
         </View>
-        <View style={[styles.featureCard, { backgroundColor: "#F2E6DF" }]} >
+        <View style={[styles.featureCard, { backgroundColor: "#F2E6DF" }]}>
           <Text style={styles.featureCardfirstText}>Submit & Action</Text>
           <Text style={styles.featureCardsecondText}>
-          See garbage around you? Open JeevEco.
+            See garbage around you? Open JeevEco.
           </Text>
           <View style={styles.featureCardNumberMain}>
-            <View style={[styles.featureCardNumber, {backgroundColor: '#CEC3BE'}]}>
+            <View
+              style={[styles.featureCardNumber, { backgroundColor: "#CEC3BE" }]}
+            >
               <Text style={styles.featureCardNumbertext}>4</Text>
             </View>
           </View>
         </View>
+        <View style={styles.featuresSection1}>
+          <Text style={styles.sectionTitle1}>Be a part of the change</Text>
+          <Text style={styles.para}>
+            Help us clean up our city and make a lasting impact on the
+            environment.
+          </Text>
+          <TouchableOpacity
+            style={styles.mainBtn1}
+            onPress={() => navigation.navigate("Add Waste")}
+          >
+            <Text style={styles.mainBtnText1}>Start Reporting Now</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-
-      {/* Call to Action */}
-      <TouchableOpacity
-        style={styles.ctaButton}
-        onPress={() => navigation.navigate("Add Waste")}
-      >
-        <Text style={styles.ctaButtonText}>Report Waste Now</Text>
-      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -120,6 +131,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
     marginBottom: 60,
     color: "#FFFFFF",
+    paddingBottom: 50,
   },
   header: {
     alignItems: "center",
@@ -187,6 +199,21 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: 50,
+  },
+  featuresSection1: {
+    // paddingHorizontal: 20,
+    backgroundColor: "#ffffff",
+    borderRadius: 30,
+    height: "auto",
+    paddingVertical: 20,
+    paddingHorizontal: 5,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    borderColor: "black",
+    borderWidth: 2,
+    width: "100%",
   },
   sectionTitle: {
     fontSize: 32,
@@ -194,6 +221,18 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     color: "#000000",
     textAlign: "center",
+  },
+  sectionTitle1: {
+    fontSize: 32,
+    fontWeight: "bold",
+    marginBottom: 15,
+    color: "#000000",
+    textAlign: "left",
+    width: "80%",
+    // height: '10%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   featureCard: {
     // borderWidth: 1,
@@ -207,7 +246,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#BEC8F9",
     marginBottom: 30,
-
   },
 
   featureCardfirstText: {
@@ -284,6 +322,33 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#fff",
+  },
+  mainBtn1: {
+    // borderWidth: 1,
+    // borderColor: "pink",
+    width: "80%",
+    height: 60,
+    borderRadius: 12,
+    backgroundColor: "#000000",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+  },
+  mainBtnText1: {
+    fontSize: 16,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    color: "#FFFFFF",
+    fontWeight: "bold",
+  },
+  para: {
+    fontSize: 20,
+    textAlign: "left",
+    marginBottom: 10,
+    width: 260,
   },
 });
 
