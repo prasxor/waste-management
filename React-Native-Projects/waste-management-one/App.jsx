@@ -170,10 +170,10 @@ const App = () => {
 
   useEffect(() => {
     async function prepare() {
-      await SplashScreen.preventAutoHideAsync(); // Keep splash screen visible
+      await SplashScreen.preventAutoHideAsync();
       setTimeout(async () => {
-        await SplashScreen.hideAsync(); // Hide splash screen after delay
-      }, 2000); // 2-second delay
+        await SplashScreen.hideAsync();
+      }, 2000); 
     }
     prepare();
   }, []);
@@ -187,20 +187,20 @@ const App = () => {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            headerTitle: () => <HeaderLogo />, // Custom header logo
+            headerTitle: () => <HeaderLogo />, 
             headerStyle: {
               backgroundColor: "#DDFEB3",
               height: 60,
             },
             headerTitleAlign: "center",
-            tabBarShowLabel: false, // Remove tab labels
+            tabBarShowLabel: false, 
             tabBarStyle: {
-              backgroundColor: "#F5F4F9", // Change tab bar color
-              height: 80, // Increase tab bar height
-              borderTopLeftRadius: 20, // Optional: rounded corners
-              borderTopRightRadius: 20, // Optional: rounded corners
+              backgroundColor: "#F5F4F9", 
+              height: 80, 
+              borderTopLeftRadius: 20, 
+              borderTopRightRadius: 20, 
               position: "absolute",
-              paddingBottom: 0, // Adjust spacing
+              paddingBottom: 0, 
               alignItems: "center",
               justifyContent: "center",
               display: "flex",
@@ -209,10 +209,10 @@ const App = () => {
             tabBarItemStyle: {
               alignItems: "center",
               justifyContent: "center",
-              height: "100%", // Ensure full height usage
+              height: "100%", 
             },
             tabBarOptions: {
-              keyboardHidesTabBar: true, // Ensures tab bar remains fixed
+              keyboardHidesTabBar: true, 
             },
             tabBarIcon: ({ focused, size }) => {
               let iconName;
@@ -235,7 +235,7 @@ const App = () => {
                     width: "100%",
                     display: "flex",
                   }}
-                  color={focused ? "black" : "gray"} // Black when selected, gray when inactive
+                  color={focused ? "black" : "gray"} 
                 />
               );
             },
